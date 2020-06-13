@@ -1,0 +1,52 @@
+import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import { formatDate } from '../lib/utilities'
+
+export default function List({ entries, page, hasNextPage, tag }) {
+  return (
+    <section className="text-gray-700 body-font overflow-hidden">
+      { entries.map((item) => (
+        <div className="mb-12 flex flex-col items-start" key={ item.slug }>
+          <span className="inline-block py-1 px-3 rounded bg-gray-100 text-gray-700 text-sm font-medium tracking-widest">
+            <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
+              <a>{ formatDate(item.date) }</a>
+            </Link>
+          </span>
+          <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+            <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
+              <a>{ item.title }</a>
+            </Link>
+          </h2>
+          <p className="leading-relaxed mb-8">{ item.content.slice(0, 200) }...</p>
+        </div>
+      )) }
+
+      <div className="py-12 flex flex-wrap md:flex-no-wrap">
+        <div className="md:flex-grow">
+          <div className="inline-block w-1/2 text-left">
+            { prevPageLink(page, tag) }
+          </div>
+          <div className="inline-block w-1/2 text-right">
+            { nextPageLink(page, hasNextPage, tag) }
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function prevPageLink(page, tag) {
+  if(page && page > 1) {
+    const href = `${ tag ? '/tag/[tag]' : '' }${ (page == 2) ? '/' : '/page/[page]' }`;
+    const path = `${ tag ? '/tag/' + tag : '' }${ (page == 2) ? '/' : '/page/' + (page - 1) }`;
+    return <Link href={ href } as={ path }><a>前のページ</a></Link>
+  }
+}
+
+function nextPageLink(page, hasNextPage, tag) {
+  if(hasNextPage) {
+    const href = `${ tag ? '/tag/[tag]' : '' }/page/[page]`;
+    const path = `${ tag ? '/tag/' + tag : '' }/page/${page + 1}`;
+    return <Link href={ href } as={ path }><a>次のページ</a></Link>
+  }
+}

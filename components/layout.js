@@ -34,12 +34,12 @@ export default function Layout({ children }) {
         </div>
       </section>
 
-      <div class="container px-5 p-5 md:pb-12 mx-auto  max-w-screen-lg">
-        <div class="flex flex-wrap">
-          <div class="w-full lg:w-2/3">
+      <div className="container px-5 p-5 md:pb-12 mx-auto  max-w-screen-lg">
+        <div className="flex flex-wrap">
+          <div className="w-full lg:w-2/3">
             { children }
           </div>
-          <div class="w-full lg:w-1/3 bg-gray-500">
+          <div className="w-full lg:w-1/3 bg-gray-500">
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function Layout({ children }) {
           <div className="container mx-auto py-6 px-5 flex flex-wrap flex-col sm:flex-row max-w-screen-lg">
             <p className="text-gray-200 text-sm text-center sm:text-left">
               <Link href='/'>
-                <a className="text-gray-500 hover:text-gray-200 ml-1">© 2020 NOT SO BADなブログ</a>
+                <a className="text-gray-500 hover:text-gray-200 ml-1">© 2020 ブンゴウメール公式ブログ</a>
               </Link>
             </p>
           </div>
