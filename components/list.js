@@ -6,7 +6,7 @@ export default function List({ entries, page, hasNextPage, tag }) {
   return (
     <section className="text-gray-700 body-font overflow-hidden">
       { entries.map((item) => (
-        <div className="mb-12 flex flex-col items-start" key={ item.slug }>
+        <div className="flex flex-col items-start" key={ item.slug }>
           <span className="inline-block py-1 px-3 rounded bg-gray-100 text-gray-700 text-sm font-medium tracking-widest">
             <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
               <a>{ formatDate(item.date) }</a>
@@ -22,7 +22,7 @@ export default function List({ entries, page, hasNextPage, tag }) {
       )) }
 
       <div className="py-12 flex flex-wrap md:flex-no-wrap">
-        <div className="md:flex-grow">
+        <div className="flex-grow">
           <div className="inline-block w-1/2 text-left">
             { prevPageLink(page, tag) }
           </div>

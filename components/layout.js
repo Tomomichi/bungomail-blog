@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Sidebar from './sidebar'
 
 export default function Layout({ children }) {
   return (
@@ -36,10 +37,11 @@ export default function Layout({ children }) {
 
       <div className="container px-5 p-5 md:pb-12 mx-auto  max-w-screen-lg">
         <div className="flex flex-wrap">
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-2/3 lg:pr-6">
             { children }
           </div>
-          <div className="w-full lg:w-1/3 bg-gray-500">
+          <div className="w-full lg:w-1/3 lg:pl-6">
+            <Sidebar />
           </div>
         </div>
       </div>
