@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
 import ReactMarkdown from 'react-markdown'
-import { getAllPosts } from '../lib/api'
+import { getPosts } from '../lib/api'
 import { formatDate } from '../lib/utilities'
 
 export default function Index({ allPosts }) {
@@ -24,7 +24,7 @@ export default function Index({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const allPosts = getPosts([
     'title',
     'date',
     'slug',
