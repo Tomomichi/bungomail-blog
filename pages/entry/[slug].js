@@ -1,12 +1,18 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getPostSlugs } from '../../lib/api'
+import { formatDate } from '../../lib/utilities'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post, morePosts, preview }) {
   return (
     <Layout>
-      {post.title}
+      <span className="inline-block py-1 px-3 rounded bg-gray-100 text-gray-700 text-sm font-medium tracking-widest">
+        { formatDate(post.date) }
+      </span>
+      <h1 className="text-2xl sm:text-3xl title-font font-semibold text-gray-900 mt-4 mb-8">
+        {post.title}
+      </h1>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </Layout>
   )
@@ -35,14 +41,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-  console.log(posts);
+  const slugs = getPostSlugs()
 
   return {
-    paths: posts.map((post) => {
+    paths: slugs.map((slug) => {
       return {
         params: {
-          slug: post.slug,
+          slug: slug.replace(/\.md$/, ''),
         },
       }
     }),

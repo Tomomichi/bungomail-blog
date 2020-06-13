@@ -12,7 +12,7 @@ export default function List({ entries, page, hasNextPage, tag }) {
               <a>{ formatDate(item.date) }</a>
             </Link>
           </span>
-          <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+          <h2 className="text-2xl sm:text-3xl title-font font-semibold text-gray-900 mt-4 mb-4">
             <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
               <a>{ item.title }</a>
             </Link>

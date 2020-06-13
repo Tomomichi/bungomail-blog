@@ -7,7 +7,7 @@ export default function Sidebar() {
       <div className="mb-8">
         <div className="rounded-lg w-full overflow-hidden">
           <a href="https://bungomail.com" target="_blank" rel="noopener">
-            <img alt="ブンゴウメール" className="object-cover object-center h-full w-full" src="images/ogp.png" />
+            <img alt="ブンゴウメール" className="object-cover object-center h-full w-full" src="/images/ogp.png" />
           </a>
         </div>
         <a href="https://bungomail.com" target="_blank" rel="noopener">
@@ -21,7 +21,7 @@ export default function Sidebar() {
       <div className="">
         <div className="rounded-lg w-full overflow-hidden">
           <a href="https://search.bungomail.com" target="_blank" rel="noopener">
-            <img alt="ブンゴウサーチ" className="object-cover object-center h-full w-full" src="images/ogp_search.png" />
+            <img alt="ブンゴウサーチ" className="object-cover object-center h-full w-full" src="/images/ogp_search.png" />
           </a>
         </div>
         <a href="https://search.bungomail.com" target="_blank" rel="noopener">
