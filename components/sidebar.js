@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Sidebar() {
   return (
     <div>
-      <h3 className="text-xl font-bold text-gray-900 border-solid border-b-2 border-gray-900 mb-12">公式リンク</h3>
+      <h3 className="text-xl font-bold text-gray-900 border-solid border-b-2 border-gray-900 mb-12">公式サイト</h3>
       <div className="mb-8">
         <div className="rounded-lg w-full overflow-hidden">
           <a href="https://bungomail.com" target="_blank" rel="noopener">
