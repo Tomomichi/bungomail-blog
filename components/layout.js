@@ -7,19 +7,19 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport" />
-        <link rel="icon" href="/images/notsobad/favicon.ico" />
-        <title key="title">NOT SO BADなブログ</title>
-        <meta name="description" content="ぼっちスタートアップが日々がんばっています。" />
-        <meta content="NOT SO BADなブログ" property="og:title" key="og:title" />
+        <link rel="icon" href="/images/favicon.ico" />
+        <title key="title">ブンゴウメール公式ブログ</title>
+        <meta name="description" content="青空文庫の作品を1ヶ月で読めるように毎日小分けでメール配信してくれるサービス「ブンゴウメール」の公式ブログです。" />
+        <meta content="ブンゴウメール公式ブログ" property="og:title" key="og:title" />
         <meta content="website" property="og:type" />
-        <meta content="https://blog.notsobad.jp" property="og:url" key="og:url" />
-        <meta content="https://blog.notsobad.jp/images/notsobad/ogp.png" property="og:image" key="og:image" />
-        <meta content="ぼっちスタートアップが日々がんばっています。" property="og:description" key="og:description" />
-        <meta content="NOT SO BADなブログ" property="og:site_name" />
+        <meta content="https://blog.bungomail.com" property="og:url" key="og:url" />
+        <meta content="https://blog.bungomail.com/images/ogp.png" property="og:image" key="og:image" />
+        <meta content="青空文庫の作品を1ヶ月で読めるように毎日小分けでメール配信してくれるサービス「ブンゴウメール」の公式ブログです。" property="og:description" key="og:description" />
+        <meta content="ブンゴウメール公式ブログ" property="og:site_name" />
         <meta content="summary_large_image" name="twitter:card" />
-        <meta content="NOT SO BADなブログ" name="twitter:title" key="twitter:title" />
-        <meta content="ぼっちスタートアップが日々がんばっています。" name="twitter:description" key="twitter:description" />
-        <meta content="https://blog.notsobad.jp/images/notsobad/ogp.png" name="twitter:image:src" key="twitter:image:src" />
+        <meta content="ブンゴウメール公式ブログ" name="twitter:title" key="twitter:title" />
+        <meta content="青空文庫の作品を1ヶ月で読めるように毎日小分けでメール配信してくれるサービス「ブンゴウメール」の公式ブログです。" name="twitter:description" key="twitter:description" />
+        <meta content="https://blog.bungomail.com/images/ogp.png" name="twitter:image:src" key="twitter:image:src" />
       </Head>
 
       <section className="text-gray-700 body-font">
