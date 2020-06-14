@@ -8,12 +8,12 @@ export default function List({ entries, page, hasNextPage, tag }) {
       { entries.map((item) => (
         <div className="flex flex-col items-start" key={ item.slug }>
           <span className="inline-block py-1 px-3 rounded bg-gray-100 text-gray-700 text-sm font-medium tracking-widest">
-            <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
+            <Link href="/entry/[...slug]" as={`/entry/${ item.slug.replace(/(\d{4})(\d{2})(\d{2})(\d{6})/, '$1/$2/$3/$4') }`}>
               <a>{ formatDate(item.date) }</a>
             </Link>
           </span>
           <h2 className="text-2xl sm:text-3xl title-font font-semibold text-gray-900 mt-4 mb-4">
-            <Link href="/entry/[...slug]" as={`/entry/${ item.slug }`}>
+            <Link href="/entry/[...slug]" as={`/entry/${ item.slug.replace(/(\d{4})(\d{2})(\d{2})(\d{6})/, '$1/$2/$3/$4') }`}>
               <a>{ item.title }</a>
             </Link>
           </h2>

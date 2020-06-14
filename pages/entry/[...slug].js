@@ -19,7 +19,7 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug(params.slug.join(''), [
     'title',
     'date',
     'slug',
@@ -45,9 +45,10 @@ export async function getStaticPaths() {
 
   return {
     paths: slugs.map((slug) => {
+      const slashed_slug = slug.replace(/(\d{4})(\d{2})(\d{2})(\d{6}).md/, '$1/$2/$3/$4');
       return {
         params: {
-          slug: slug.replace(/\.md$/, ''),
+          slug: slashed_slug.split('/'),
         },
       }
     }),
