@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - master
+  schedule:
+    - cron: 10 22 * * *  # JSTで毎日 07:10 にビルド実行
 
 jobs:
   build-deploy:
